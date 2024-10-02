@@ -1,6 +1,6 @@
 package Classes;
 
-public class Adotante 
+public class Adotante extends Pessoa
 {
     private int IdAdot;
     private String EspecieA;
@@ -8,7 +8,18 @@ public class Adotante
     private String TipoA;
     private int IdadeA;
     private String SexoA;
-    private String HistAdocao;
+
+    public Adotante(int IdPessoa, String Nome, String DataNasc, String Genero, String CPF, String Endereco,
+            String Telefone, String Email, String Senha, int idAdot, String especieA, String racaA, String tipoA,
+            int idadeA, String sexoA) {
+        super(IdPessoa, Nome, DataNasc, Genero, CPF, Endereco, Telefone, Email, Senha);
+        IdAdot = idAdot;
+        EspecieA = especieA;
+        RacaA = racaA;
+        TipoA = tipoA;
+        IdadeA = idadeA;
+        SexoA = sexoA;
+    }
 
     public Adotante(){
         
@@ -60,13 +71,5 @@ public class Adotante
 
     public void setSexoA(String sexoA) {
         SexoA = sexoA;
-    }
-
-    public String getHistAdocao() {
-        return HistAdocao;
-    }
-
-    public void setHistAdocao(String histAdocao) {
-        HistAdocao = histAdocao;
     }
 }

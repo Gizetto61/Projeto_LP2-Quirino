@@ -1,6 +1,6 @@
 package Classes;
 
-public class Funcionario 
+public class Funcionario extends Pessoa
 {
     private int IdFunc;
     private String DataContr;
@@ -8,6 +8,17 @@ public class Funcionario
     private double Salario;
     private String Departamento;
     
+    public Funcionario(int IdPessoa, String Nome, String DataNasc, String Genero, String CPF, String Endereco,
+            String Telefone, String Email, String Senha, int idFunc, String dataContr, String cargo, double salario,
+            String departamento) {
+        super(IdPessoa, Nome, DataNasc, Genero, CPF, Endereco, Telefone, Email, Senha);
+        IdFunc = idFunc;
+        DataContr = dataContr;
+        Cargo = cargo;
+        Salario = salario;
+        Departamento = departamento;
+    }
+
     public Funcionario(){
         
     }
