@@ -106,11 +106,23 @@ public class Main{
 
     private static Tutor criarTutor(Scanner scanner, Pessoa pessoa1){
         
-        //System.out.println("\n--- Criar Nova Tutor ---");
-        //System.out.print("Numero animal: ");
+        System.out.println("\n--- Criar Nova Tutor ---");
+        System.out.print("Numero animal: ");
         int numAnimal = scanner.nextInt();
 
-        //System.out.print("Histórico de Adoção:");
+        /* Apenas adicionar uma opção de escanear um NextLine 
+         * para o buffer sem setar uma variável receptora resolveu o problema;
+         * @luizfpq
+         *
+         *  Quando você chama scanner.nextInt(), o cursor do scanner fica posicionado após o número, 
+         *  e o próximo scanner.nextLine() captura a nova linha deixada pelo nextInt(), 
+         *  em vez de esperar pela entrada do usuário.
+         */
+
+        scanner.nextLine();
+
+
+        System.out.print("Histórico de Adoção:");
         String histAdocao = scanner.nextLine();
 
         int idTutor = 1; // Exemplo de ID fixo
