@@ -2,15 +2,15 @@ package Classes;
 
 public class Pessoa 
 {
-    private int IdPessoa;
-    private String Nome;
-    private String DataNasc;
-    private String Genero;
-    private String CPF;
-    private String Endereco;
-    private String Telefone;
-    private String Email;
-    private String Senha;
+    protected int IdPessoa;
+    protected String Nome;
+    protected String DataNasc;
+    protected String Genero;
+    protected String CPF;
+    protected String Endereco;
+    protected String Telefone;
+    protected String Email;
+    protected String Senha;
 
     public Pessoa(){
         

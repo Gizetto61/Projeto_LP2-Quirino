@@ -41,7 +41,19 @@ public class Tutor extends Pessoa
     }
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
-        return super.toString();
+        return "{"
+                + "\"IdPessoa\":" + IdPessoa + ","
+                + "\"Nome\":\"" + Nome + "\","
+                + "\"DataNasc\":\"" + DataNasc + "\","
+                + "\"Gênero\":\"" + Genero + "\","
+                + "\"CPF\":\"" + CPF + "\","
+                + "\"Endereço\":\"" + Endereco + "\","
+                + "\"Telefone\":\"" + Telefone + "\","
+                + "\"Email\":\"" + Email + "\","
+                + "\"Senha\":\"" + Senha + "\","
+                + "\"IdTutor\":\"" + IdTutor + "\","
+                + "\"NumAnimal\":\"" + NumAnimal + "\","
+                + "\"HistAdocao\":\"" + HistAdocao + "\","
+        + "}";
     }
 }

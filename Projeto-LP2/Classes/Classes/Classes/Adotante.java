@@ -9,10 +9,8 @@ public class Adotante extends Pessoa
     private int IdadeA;
     private String SexoA;
 
-    public Adotante(int IdPessoa, String Nome, String DataNasc, String Genero, String CPF, String Endereco,
-            String Telefone, String Email, String Senha, int idAdot, String especieA, String racaA, String tipoA,
-            int idadeA, String sexoA) {
-        super(IdPessoa, Nome, DataNasc, Genero, CPF, Endereco, Telefone, Email, Senha);
+    public Adotante(Pessoa pessoa, int idAdot, String especieA, String racaA, String tipoA, int idadeA, String sexoA) {
+        super(pessoa.getIdPessoa(), pessoa.getNome(), pessoa.getDataNasc(), pessoa.getGenero(), pessoa.getCPF(), pessoa.getEndereco(), pessoa.getTelefone(), pessoa.getEmail(), pessoa.getSenha());
         IdAdot = idAdot;
         EspecieA = especieA;
         RacaA = racaA;
@@ -72,4 +70,27 @@ public class Adotante extends Pessoa
     public void setSexoA(String sexoA) {
         SexoA = sexoA;
     }
+
+    @Override
+    public String toString() {
+        return "{"
+                + "\"IdPessoa\":" + IdPessoa + ","
+                + "\"Nome\":\"" + Nome + "\","
+                + "\"DataNasc\":\"" + DataNasc + "\","
+                + "\"Gênero\":\"" + Genero + "\","
+                + "\"CPF\":\"" + CPF + "\","
+                + "\"Endereço\":\"" + Endereco + "\","
+                + "\"Telefone\":\"" + Telefone + "\","
+                + "\"Email\":\"" + Email + "\","
+                + "\"Senha\":\"" + Senha + "\","
+                + "\"IdAdot\":\"" + IdAdot + "\","
+                + "\"EspecieA\":\"" + EspecieA + "\","
+                + "\"RacaA\":\"" + RacaA + "\","
+                + "\"TipoA\":\"" + TipoA + "\","
+                + "\"IdadeA\":\"" + IdadeA + "\","
+                + "\"SexoA\":\"" + SexoA + "\","
+        + "}";
+    }
 }
+
+

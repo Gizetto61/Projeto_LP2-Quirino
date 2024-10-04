@@ -3,10 +3,15 @@ package Classes;
 import java.util.Scanner;
 
 public class Main{
+
     public static void main(String[] args) 
     {
         Scanner scanner = new Scanner(System.in);
         Pessoa pessoa = new Pessoa();
+        Tutor tutor1 = new Tutor();
+        Adotante adotante1 = new Adotante();
+        Funcionario funcionario1 = new Funcionario();
+        String Tipo;
 
         System.out.println("Bem-vindo ao sistema de gerenciamento de Pessoas!");
 
@@ -23,10 +28,10 @@ public class Main{
 
             switch (choice) {
                 case 1:
-                    pessoa = criarPessoa(scanner);
+                    pessoa = criarPessoa(scanner, null);
                     break;
                 case 2:
-                    exibirPessoa(pessoa);
+                    exibirPessoa(pessoa, scanner, tutor1, adotante1, funcionario1, null);
                     break;
                 case 3:
                     editarPessoa(scanner, pessoa);
@@ -43,7 +48,7 @@ public class Main{
         scanner.close();
     }
 
-    private static Pessoa criarPessoa(Scanner scanner) {
+    private static Pessoa criarPessoa(Scanner scanner, String Tipo) {
         System.out.println("\n--- Criar Nova Pessoa ---");
 
         
@@ -78,18 +83,22 @@ public class Main{
         Pessoa pessoa = new Pessoa(idPessoa, nome, dtn, genero, cpf, endereco, telefone, email, senha);
 
         System.out.println("Que tipo de pessoa você é?\nTutor[T] Adotante[A] Funciomario[F]:");
-        String Tipo = scanner.nextLine();
+        Tipo = scanner.nextLine();
         switch (Tipo) {
             case "T":
-
                 Tutor tutor1 = new Tutor();
                 tutor1 = criarTutor(scanner, pessoa);
+                exibirTutor(tutor1);
                 break;
             case "A":
-
+                Adotante adotante1 = new Adotante();
+                adotante1 = criarAdotante(scanner, pessoa);
+                exibirAdotante(adotante1);
                 break;
             case "F":
-
+                Funcionario funcionario1 = new Funcionario();
+                funcionario1 = criarFuncionario(scanner, pessoa);
+                exibirFuncionario(funcionario1);
                 break;
         
             default:
@@ -131,9 +140,104 @@ public class Main{
         return tutor1;
 
     }
-    private static void exibirPessoa(Pessoa pessoa) {
-        System.out.println("\n--- Informações da Pessoa ---");
+
+    private static void exibirTutor(Tutor tutor1)
+    {
+        System.out.println("\n--- Informações do Tutor ---");
+        System.out.println(tutor1.toString());
+    }
+
+    public static Adotante criarAdotante(Scanner scanner, Pessoa pessoa1){
+        System.out.println("\n--- Criar Novo Adotante ---");
+        System.out.print("Espécie do Animal: ");
+        String especieA = scanner.nextLine();
+
+        System.out.println("Raça do Animal: ");
+        String racaA = scanner.nextLine();
+
+        System.out.println("Tipo do Animal: ");
+        String tipoA = scanner.nextLine();
+
+        System.out.println("Idade do Animal: ");
+        int idadeA = scanner.nextInt();
+
+        scanner.nextLine();
+
+        System.out.println("Sexo do Animal: ");
+        String sexoA = scanner.nextLine();
+
+        int idAdot = 1; // Exemplo de ID fixo
+        System.out.println("Adotante criado com sucesso!");
+        Adotante adotante1 = new Adotante(pessoa1, idAdot, especieA, racaA, tipoA, idadeA, sexoA);
+        return adotante1;
+    }
+
+    public static void exibirAdotante(Adotante adotante1){
+        System.out.println("\n--- Informações do Adotante ---");
+        System.out.println(adotante1.toString());
+    }
+
+    public static Funcionario criarFuncionario(Scanner scanner, Pessoa pessoa1){
+        System.out.println("\n--- Criar novo Funcionário ---");
+        System.out.println("Data da Contratação: ");
+        String dataContr = scanner.nextLine();
+
+        System.out.println("Cargo: ");
+        String cargo = scanner.nextLine();
+
+        System.out.println("Salario: ");
+        double salario = scanner.nextDouble();
+
+        scanner.nextLine();
+
+        System.out.println("Departamento: ");
+        String departamento = scanner.nextLine();
+
+        int idFunc = 1;
+        System.out.println("Funcionário criado com sucesso!");
+        Funcionario funcionario1 = new Funcionario(pessoa1, idFunc, dataContr, cargo, salario, departamento);
+
+        return funcionario1;
+    }
+
+    public static void exibirFuncionario(Funcionario funcionario1){
+        System.out.println("\n--- Informações do Funcionário ---");
+        System.out.println(funcionario1.toString());
+    }
+
+    private static void exibirPessoa(Pessoa pessoa, Scanner scanner, Tutor tutor1, Adotante adotante1, Funcionario funcionario1, String Tipo) {
+        System.out.println("Relembre o seu tipo de pessoa você é:\\nTutor[T] Adotante[A] Funciomario[F]:");
+        Tipo = scanner.nextLine();
+        switch (Tipo) {
+            case "T":
+                exibirTutor(tutor1);
+                break;
+            case "A":
+                exibirAdotante(adotante1);
+                break;
+            case "F":
+                exibirFuncionario(funcionario1);
+                break;
+            default:
+                break;
+        }
+        
+        /*if (Tipo == "T"){
+            exibirTutor(tutor1);
+        }else{
+            if (Tipo == "A") {
+                exibirAdotante(adotante1);
+            }else{
+                if (Tipo == "F") {
+                    exibirFuncionario(funcionario1);
+                }else{
+                    pessoa.toString();
+                }
+            }
+        }
+        /*System.out.println("\n--- Informações da Pessoa ---");
         System.out.println(pessoa.toString());
+        */
     }
 
     private static void editarPessoa(Scanner scanner, Pessoa pessoa) {
