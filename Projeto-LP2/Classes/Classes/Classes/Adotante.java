@@ -3,20 +3,20 @@ package Classes;
 public class Adotante extends Pessoa
 {
     private int IdAdot;
-    private String EspecieA;
-    private String RacaA;
-    private String TipoA;
-    private int IdadeA;
-    private String SexoA;
+    private String Especie;
+    private String Raca;
+    private String Tipo;
+    private int Idade;
+    private String Sexo;
 
-    public Adotante(Pessoa pessoa, int idAdot, String especieA, String racaA, String tipoA, int idadeA, String sexoA) {
+    public Adotante(Pessoa pessoa, int idAdot, String especie, String raca, String tipo, int idade, String sexo) {
         super(pessoa.getIdPessoa(), pessoa.getNome(), pessoa.getDataNasc(), pessoa.getGenero(), pessoa.getCPF(), pessoa.getEndereco(), pessoa.getTelefone(), pessoa.getEmail(), pessoa.getSenha());
         IdAdot = idAdot;
-        EspecieA = especieA;
-        RacaA = racaA;
-        TipoA = tipoA;
-        IdadeA = idadeA;
-        SexoA = sexoA;
+        Especie = especie;
+        Raca = raca;
+        Tipo = tipo;
+        Idade = idade;
+        Sexo = sexo;
     }
 
     public Adotante(){
@@ -31,64 +31,64 @@ public class Adotante extends Pessoa
         IdAdot = idAdot;
     }
 
-    public String getEspecieA() {
-        return EspecieA;
+    public String getEspecie() {
+        return Especie;
     }
 
-    public void setEspecieA(String especieA) {
-        EspecieA = especieA;
+    public void setEspecie(String especie) {
+        Especie = especie;
     }
 
-    public String getRacaA() {
-        return RacaA;
+    public String getRaca() {
+        return Raca;
     }
 
-    public void setRacaA(String racaA) {
-        RacaA = racaA;
+    public void setRaca(String raca) {
+        Raca = raca;
     }
 
-    public String getTipoA() {
-        return TipoA;
+    public String getTipo() {
+        return Tipo;
     }
 
-    public void setTipoA(String tipoA) {
-        TipoA = tipoA;
+    public void setTipo(String tipo) {
+        Tipo = tipo;
     }
 
-    public int getIdadeA() {
-        return IdadeA;
+    public int getIdade() {
+        return Idade;
     }
 
-    public void setIdadeA(int idadeA) {
-        IdadeA = idadeA;
+    public void setIdade(int idade) {
+        Idade = idade;
     }
 
-    public String getSexoA() {
-        return SexoA;
+    public String getSexo() {
+        return Sexo;
     }
 
-    public void setSexoA(String sexoA) {
-        SexoA = sexoA;
+    public void setSexo(String sexo) {
+        Sexo = sexo;
     }
 
     @Override
     public String toString() {
         return "{"
-                + "\"IdPessoa\":" + IdPessoa + ","
-                + "\"Nome\":\"" + Nome + "\","
-                + "\"DataNasc\":\"" + DataNasc + "\","
-                + "\"Gênero\":\"" + Genero + "\","
-                + "\"CPF\":\"" + CPF + "\","
-                + "\"Endereço\":\"" + Endereco + "\","
-                + "\"Telefone\":\"" + Telefone + "\","
-                + "\"Email\":\"" + Email + "\","
-                + "\"Senha\":\"" + Senha + "\","
-                + "\"IdAdot\":\"" + IdAdot + "\","
-                + "\"EspecieA\":\"" + EspecieA + "\","
-                + "\"RacaA\":\"" + RacaA + "\","
-                + "\"TipoA\":\"" + TipoA + "\","
-                + "\"IdadeA\":\"" + IdadeA + "\","
-                + "\"SexoA\":\"" + SexoA + "\","
+                + "\"IdPessoa\":" + IdPessoa + ",\n"
+                + "\"Nome\":\"" + Nome + "\",\n"
+                + "\"DataNasc\":\"" + DataNasc + "\",\n"
+                + "\"Gênero\":\"" + Genero + "\",\n"
+                + "\"CPF\":\"" + CPF + "\",\n"
+                + "\"Endereço\":\"" + Endereco + "\",\n"
+                + "\"Telefone\":\"" + Telefone + "\",\n"
+                + "\"Email\":\"" + Email + "\",\n"
+                + "\"Senha\":\"" + Senha + "\",\n"
+                + "\"IdAdot\":\"" + IdAdot + "\",\n"
+                + "\"Especie\":\"" + Especie + "\",\n"
+                + "\"Raca\":\"" + Raca + "\",\n"
+                + "\"Tipo\":\"" + Tipo + "\",\n"
+                + "\"Idade\":\"" + Idade + "\",\n"
+                + "\"Sexo\":\"" + Sexo + "\""
         + "}";
     }
 }

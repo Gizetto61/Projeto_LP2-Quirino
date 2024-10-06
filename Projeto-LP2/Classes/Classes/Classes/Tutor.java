@@ -42,18 +42,18 @@ public class Tutor extends Pessoa
     @Override
     public String toString() {
         return "{"
-                + "\"IdPessoa\":" + IdPessoa + ","
-                + "\"Nome\":\"" + Nome + "\","
-                + "\"DataNasc\":\"" + DataNasc + "\","
-                + "\"Gênero\":\"" + Genero + "\","
-                + "\"CPF\":\"" + CPF + "\","
-                + "\"Endereço\":\"" + Endereco + "\","
-                + "\"Telefone\":\"" + Telefone + "\","
-                + "\"Email\":\"" + Email + "\","
-                + "\"Senha\":\"" + Senha + "\","
-                + "\"IdTutor\":\"" + IdTutor + "\","
-                + "\"NumAnimal\":\"" + NumAnimal + "\","
-                + "\"HistAdocao\":\"" + HistAdocao + "\","
+                + "\"IdPessoa\":" + IdPessoa + ",\n"
+                + "\"Nome\":\"" + Nome + "\",\n"
+                + "\"DataNasc\":\"" + DataNasc + "\",\n"
+                + "\"Gênero\":\"" + Genero + "\",\n"
+                + "\"CPF\":\"" + CPF + "\",\n"
+                + "\"Endereço\":\"" + Endereco + "\",\n"
+                + "\"Telefone\":\"" + Telefone + "\",\n"
+                + "\"Email\":\"" + Email + "\"\n"
+                + "\"Senha\":\"" + Senha + "\",\n"
+                + "\"IdTutor\":\"" + IdTutor + "\",\n"
+                + "\"NumAnimal\":\"" + NumAnimal + "\",\n"
+                + "\"HistAdocao\":\"" + HistAdocao + "\""
         + "}";
     }
 }
